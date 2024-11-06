@@ -17,8 +17,9 @@
 # along with g8-dolphin.  If not, see <https://www.gnu.org/licenses/>.
 
 import asyncio
+from discord.ext.commands import Bot
 from src.g8_dolphin.bot import setup_bot
 import bot_config
 
-bot = asyncio.run(setup_bot(bot_config=bot_config))
+bot: Bot = asyncio.run(setup_bot(bot_config=bot_config))
 bot.run(token=bot.user_config.token)
