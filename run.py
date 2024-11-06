@@ -1,4 +1,4 @@
-# g8-dolphin: a general-purpose Discord bot.
+# g8-dolphin: A general-purpose Discord bot.
 # Copyright (C) 2024  CToID <funk443@yahoo.com.tw>
 
 # This file is part of g8-dolphin.
