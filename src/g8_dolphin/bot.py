@@ -24,9 +24,15 @@ from discord.ext.commands import Bot
 
 
 async def load_features(bot: Bot) -> None:
-    for feature in os.listdir(bot.features_dir):
-        name_without_ext = feature[:-3]
-        await bot.load_extension(f"features.{name_without_ext}")
+    for filename in os.listdir(bot.features_dir):
+        if filename.startswith("__"):
+            continue
+
+        name = filename[:-3]
+        await bot.load_extension(
+            name=f".{name}", package=f"{__package__}.features"
+        )
+        bot.logger.info(f"Loaded feature '{name}'.")
 
 
 async def setup_bot(bot_config: ModuleType) -> Bot:
