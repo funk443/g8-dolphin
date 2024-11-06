@@ -17,10 +17,10 @@
 # along with g8-dolphin.  If not, see <https://www.gnu.org/licenses/>.
 
 from discord import Interaction, app_commands
-from discord.ext.commands import Bot, GroupCog
+from discord.ext.commands import Bot, Cog
 
 
-class Ping(GroupCog):
+class Ping(Cog):
 
     def __init__(self, bot: Bot) -> None:
         self.bot = bot
