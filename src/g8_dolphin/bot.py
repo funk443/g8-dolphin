@@ -56,6 +56,7 @@ async def setup_bot(bot_config: ModuleType) -> Bot:
     @bot.event
     async def on_ready() -> None:
         bot.logger.info("Successfully connected.")
+        await bot.tree.sync()
 
     await load_features(bot=bot)
     return bot
